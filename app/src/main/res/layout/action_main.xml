@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.example.test1.DrawView
+            android:id="@+id/drawView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|top"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="25dp"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/start_algorithms_bt"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:backgroundTint="#00FFFFFF"
+                android:onClick="showDialog"
+                android:src="@drawable/start_button_selector" />
+
+            <ImageButton
+                android:id="@+id/clear_field_bt"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="25dp"
+                android:backgroundTint="#00FFFFFF"
+                android:onClick="clearGraph"
+                android:src="@drawable/clean_button_selector" />
+
+            <ImageButton
+                android:id="@+id/button2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="25dp"
+                android:onClick="outGraph"
+                android:backgroundTint="#00FFFFFF"
+                android:src="@drawable/bool_selector"
+                 />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="25dp"
+            android:layout_gravity="top|end"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/test_db_bt"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="addToFavorites"
+                android:backgroundTint="#00FFFFFF"
+                android:src="@drawable/favorite_selector"
+                 />
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>
