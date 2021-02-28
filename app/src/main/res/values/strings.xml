@@ -5,4 +5,5 @@
     <string name="info">       Граф — множество V вершин и набор Е неупорядоченных и упорядоченных пар вершин; обозначается Г. через G(V, Е).
     Подробнее: https://ru.wikipedia.org/wiki/Граф_(математика)</string>
     <string name="info2">Об алгоритмах на графах можно прочитать тут: https://ru.wikipedia.org/wiki/Категория:Алгоритмы_на_графах</string>
+    <string name="algorithm_DFS">Поиск в глубину</string>
 </resources>
