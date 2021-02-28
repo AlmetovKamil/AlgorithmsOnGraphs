@@ -13,10 +13,18 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import java.lang.reflect.Array;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Objects;
+import java.util.Queue;
+import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class Graph {
@@ -26,7 +34,9 @@ public class Graph {
     private int index1 = -1;
     private int index2 = -1;
     private ConcurrentHashMap<Integer, ArrayList<Integer>> links = new ConcurrentHashMap<>();
-    private boolean start = false;
+    private int start = 0;
+    public static final int DFS_ID = 1;
+    public static final int BFS_ID = 2;
 
     public ArrayList<MyPoint> getPoints() {
         return points;
@@ -36,9 +46,9 @@ public class Graph {
         return links;
     }
 
-    public boolean getStart() {return start;}
+    public int getStart() {return start;}
 
-    public void setStart(boolean b) {this.start = b;}
+    public void setStart(int start) {this.start = start;}
 
     public void setPoints(ArrayList<MyPoint> points) {
         this.points = points;
@@ -191,6 +201,29 @@ public class Graph {
             Thread.sleep(1000);
             points.get(s).setCur(false);
         }
+    }
+
+    void BFS(int s) throws InterruptedException {
+        ArrayDeque<Integer> q = new ArrayDeque<>();
+        q.add(s);
+        points.get(s).setVisited(true);
+        points.get(s).setCur(true);
+        Thread.sleep(1000);
+        points.get(s).setCur(false);
+        while(!q.isEmpty()) {
+            int v = q.remove();
+            for (int u : Objects.requireNonNull(links.get(v))) {
+                if (!points.get(u).isVisited()) {
+                    points.get(u).setVisited(true);
+                    q.add(u);
+                    points.get(u).setCur(true);
+                    Thread.sleep(1000);
+                    points.get(u).setCur(false);
+                }
+
+            }
+        }
+
     }
 
 }

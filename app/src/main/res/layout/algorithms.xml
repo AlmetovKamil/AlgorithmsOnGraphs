@@ -12,5 +12,13 @@
             android:text="@string/algorithm_DFS"
             android:textAlignment="center"
             android:textSize="25sp"
-            android:onClick="startDFS"/>
+            android:onClick="startAlgorithm"/>
+        <RadioButton
+            android:id="@+id/bfs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/algorithm_BFS"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:onClick="startAlgorithm"/>
 </RadioGroup>

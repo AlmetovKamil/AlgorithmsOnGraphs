@@ -85,17 +85,19 @@ public class MainAction extends AppCompatActivity {
 
 
 
-    public void startDFS(View view) {
+    public void startAlgorithm(View view) {
         // если переключатель отмечен
         boolean checked = ((RadioButton) view).isChecked();
         // Получаем нажатый переключатель
-        switch(view.getId()) {
-            case R.id.dfs:
-                if (checked){
-                    graph.setStart(true);
-                }
-                break;
-
+        if (checked) {
+            switch (view.getId()) {
+                case R.id.dfs:
+                    graph.setStart(Graph.DFS_ID);
+                    break;
+                case R.id.bfs:
+                    graph.setStart(Graph.BFS_ID);
+                    break;
+            }
         }
     }
 

@@ -26,9 +26,13 @@ public class DrawView extends SurfaceView implements SurfaceHolder.Callback {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         try {
-            if (graph.getStart()) {
+            if (graph.getStart() == Graph.DFS_ID) {
                 graph.DFS(graph.findPoint((int)event.getX(), (int)event.getY()));
-                graph.setStart(false);
+                graph.setStart(0);
+            }
+            else if (graph.getStart() == Graph.BFS_ID) {
+                graph.BFS(graph.findPoint((int)event.getX(), (int)event.getY()));
+                graph.setStart(0);
             }
             else {
                 graph.setPointCoordinates((int)event.getX(),(int)event.getY());
